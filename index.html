@@ -9,58 +9,56 @@
             margin: 0;
             padding: 0;
             height: 100%;
-            /* 2. Background white */
-            background-color: #ffffff; 
-            color: #000; /* Text needs to be black on white */
+            background-color: #ffffff;
+            color: #000;
             font-family: "Courier New", Courier, monospace;
+        }
+
+        /* 1. Flex container to distribute logo, content, and icons */
+        .wrapper {
             display: flex;
             flex-direction: column;
             align-items: center;
-        }
-
-        /* Logo Top Center */
-        header {
-            padding-top: 50px;
+            justify-content: space-between; /* Ensures equal spacing top/bottom */
+            height: 100vh;
+            padding: 40px 0;
+            box-sizing: border-box;
         }
 
         .logo {
-            /* 1. Logo 60% smaller (original max-width 120px * 0.4) */
             max-width: 48px;
             height: auto;
         }
 
-        /* Main Content / Figure */
+        /* Centered Group */
         main {
-            flex-grow: 1;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
             text-align: center;
         }
 
+        /* 2. Image 25% larger (from 350px to 438px) */
         .figure-container img {
-            max-width: 350px;
-            width: 100%;
+            max-width: 438px;
+            width: 90vw; /* Responsive scaling */
             height: auto;
             margin-bottom: 25px;
         }
 
-        /* Baseline Text */
         .baseline {
             font-size: 0.8rem;
             letter-spacing: 0.15em;
-            margin-bottom: 25px;
+            text-transform: uppercase;
         }
 
-        /* Social Icons */
         .socials {
             display: flex;
             gap: 25px;
         }
 
         .socials a {
-            color: #000; /* Icons need to be black on white */
+            color: #000;
             transition: opacity 0.2s;
         }
 
@@ -69,28 +67,30 @@
         }
 
         .socials svg {
-            width: 20px;
-            height: 20px;
+            width: 22px;
+            height: 22px;
             fill: currentColor;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <img src="assets/logo.png" alt="riot laboratories" class="logo">
-    </header>
+    <div class="wrapper">
+        <header>
+            <img src="assets/logo.png" alt="riot laboratories" class="logo">
+        </header>
 
-    <main>
-        <div class="figure-container">
-            <img src="assets/background.png" alt="figure">
-        </div>
-        
-        <div class="baseline">
-            NON COMPLIANCE SINCE Y2K
-        </div>
+        <main>
+            <div class="figure-container">
+                <img src="assets/background.png" alt="figure">
+            </div>
+            
+            <div class="baseline">
+                NON COMPLIANT SINCE Y2K
+            </div>
+        </main>
 
-        <div class="socials">
+        <footer class="socials">
             <a href="https://instagram.com" target="_blank" aria-label="Instagram">
                 <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
             </a>
@@ -100,8 +100,8 @@
             <a href="#" target="_blank" aria-label="Shop">
                 <svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
             </a>
-        </div>
-    </main>
+        </footer>
+    </div>
 
 </body>
 </html>
