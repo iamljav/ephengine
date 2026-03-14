@@ -20,20 +20,21 @@
             align-items: center;
             justify-content: space-between;
             height: 100vh;
-            padding: 40px 0;
+            padding: 30px 0; /* Reduced padding to lift logo and lower icons */
             box-sizing: border-box;
         }
 
         header {
             flex-shrink: 0;
+            margin-top: 20px;
         }
 
         .logo {
-            max-width: 48px;
+            max-width: 42px; /* Slightly smaller for that 2.jpg feel */
             height: auto;
         }
 
-        /* Central Group: Image + Baseline locked together */
+        /* Central Group: Image + Baseline locked tight */
         main {
             display: flex;
             flex-direction: column;
@@ -44,46 +45,48 @@
         }
 
         .figure-container img {
-            max-width: 438px;
-            width: 85vw;
+            max-width: 550px; /* Increased by 25% for dominance */
+            width: 90vw;
             height: auto;
             display: block;
             margin: 0 auto;
         }
 
         .baseline {
-            font-size: 0.8rem;
-            letter-spacing: 0.15em;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
             text-transform: uppercase;
-            margin-top: 10px; /* Tight distance from the image "feet" */
+            margin-top: 5px; /* Minimal gap as requested */
+            font-weight: bold;
         }
 
         footer {
             flex-shrink: 0;
+            margin-bottom: 20px;
         }
 
         .socials {
             display: flex;
-            gap: 25px;
+            gap: 20px;
         }
 
         .socials a {
             color: #000;
-            transition: color 0.3s ease; /* Transition for hover color change */
+            transition: color 0.2s ease;
             text-decoration: none;
         }
 
-        /* Set the color on hover to approximate the figure's dark grey */
+        /* Hover color matched to the gnome figure */
         .socials a:hover {
-            color: #333333; /* Update this HEX to match the figure perfectly if desired */
+            color: #a31d4b; 
         }
 
         .socials svg {
-            width: 24px; /* Increased slightly for stroke icons to be more visible */
-            height: 24px;
-            fill: none; /* Crucial for stroked icons, do not use currentColor fill */
-            stroke: currentColor; /* The stroke color follows the text color (set above and on hover) */
-            stroke-width: 1.5; /* Sets the line thickness for a lighter feel */
+            width: 20px; /* Smaller, more delicate icons */
+            height: 20px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.2; /* Lighter stroke for precision */
             stroke-linecap: round;
             stroke-linejoin: round;
         }
