@@ -8,61 +8,63 @@
         body, html {
             margin: 0;
             padding: 0;
-            height: 100%;
+            height: 100vh;
             background-color: #ffffff;
             color: #000;
             font-family: "Courier New", Courier, monospace;
+            overflow: hidden;
         }
 
+        /* 8-Part Grid Layout */
         .wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
+            display: grid;
+            grid-template-rows: repeat(8, 1fr); /* Divides height into 8 equal parts */
             height: 100vh;
-            padding: 30px 0; /* Reduced padding to lift logo and lower icons */
-            box-sizing: border-box;
+            width: 100%;
+            align-items: center;
+            justify-items: center;
         }
 
+        /* Part 1: Logo */
         header {
-            flex-shrink: 0;
-            margin-top: 20px;
+            grid-row: 1;
         }
 
         .logo {
-            max-width: 42px; /* Slightly smaller for that 2.jpg feel */
+            max-width: 42px;
             height: auto;
         }
 
-        /* Central Group: Image + Baseline locked tight */
-        main {
+        /* Part 3, 4, 5: Background Figure */
+        /* We span across 3 rows to give the image vertical room */
+        .figure-container {
+            grid-row: 3 / span 3;
             display: flex;
-            flex-direction: column;
             align-items: center;
-            text-align: center;
-            flex-grow: 1;
             justify-content: center;
+            height: 100%;
         }
 
         .figure-container img {
-            max-width: 550px; /* Increased by 25% for dominance */
-            width: 90vw;
-            height: auto;
-            display: block;
-            margin: 0 auto;
+            max-height: 100%; /* Constrains image to the 3-row height */
+            width: auto;
+            max-width: 90vw;
         }
 
+        /* Part 6: Baseline */
         .baseline {
+            grid-row: 6;
             font-size: 0.75rem;
             letter-spacing: 0.2em;
             text-transform: uppercase;
-            margin-top: 5px; /* Minimal gap as requested */
             font-weight: bold;
+            align-self: start; /* Moves it closer to the "feet" of the figure */
+            padding-top: 10px;
         }
 
+        /* Part 8: Icons */
         footer {
-            flex-shrink: 0;
-            margin-bottom: 20px;
+            grid-row: 8;
         }
 
         .socials {
@@ -76,20 +78,21 @@
             text-decoration: none;
         }
 
-        /* Hover color matched to the gnome figure */
         .socials a:hover {
             color: #a31d4b; 
         }
 
         .socials svg {
-            width: 20px; /* Smaller, more delicate icons */
+            width: 20px;
             height: 20px;
             fill: none;
             stroke: currentColor;
-            stroke-width: 1.2; /* Lighter stroke for precision */
+            stroke-width: 1.2;
             stroke-linecap: round;
             stroke-linejoin: round;
         }
+
+        /* Part 2 and 7 are left empty by the grid placement */
     </style>
 </head>
 <body>
@@ -99,14 +102,13 @@
             <img src="assets/logo.png" alt="riot laboratories" class="logo">
         </header>
 
-        <main>
-            <div class="figure-container">
-                <img src="assets/background.png" alt="figure">
-                <div class="baseline">
-                    NON COMPLIANT SINCE Y2K
-                </div>
-            </div>
-        </main>
+        <div class="figure-container">
+            <img src="assets/background.png" alt="figure">
+        </div>
+
+        <div class="baseline">
+            NON COMPLIANT SINCE Y2K
+        </div>
 
         <footer class="socials">
             <a href="https://instagram.com" target="_blank" aria-label="Instagram">
