@@ -229,8 +229,32 @@
             <a href="https://www.instagram.com/ephemeralengine" target="_blank" aria-label="Instagram">
                 <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line></svg>
             </a>
-            <a href="/cdn-cgi/l/email-protection#0960676f66496c79616c646c7b68656c676e60676c276a6664" aria-label="Email">
+            <a href="mailto:info@ephemeralengine.com" aria-label="Email">
                 <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
             </a>
             <a href="https://ephemeralengine.metalabel.com" target="_blank" aria-label="Shop">
-                <svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+            </a>
+        </nav>
+    </footer>
+
+    <script>
+        const hub = document.querySelector('.center-hub');
+        const ring = document.querySelector('.about-ring');
+
+        // Tap logo/baseline -> open
+        hub.addEventListener('click', function(e) {
+            if (!hub.classList.contains('is-open')) {
+                hub.classList.add('is-open');
+            }
+        });
+
+        // Tap text -> close (back to start state)
+        ring.addEventListener('click', function(e) {
+            e.stopPropagation();
+            hub.classList.remove('is-open');
+        });
+    </script>
+
+</body>
+</html>
